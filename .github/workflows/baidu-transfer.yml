@@ -36,7 +36,9 @@ jobs:
           constraints.txt
 
     - name: Install dependencies
-      run: bash scripts/install_dependencies.sh runtime
+      run: |
+        pip install setuptools
+        bash scripts/install_dependencies.sh runtime
 
     - name: Check encrypted failed state key
       id: failed_state
